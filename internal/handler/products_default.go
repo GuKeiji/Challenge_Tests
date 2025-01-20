@@ -45,11 +45,7 @@ func (h *ProductsDefault) Get() http.HandlerFunc {
 
 		// process
 		// - search products
-		p, err := h.rp.SearchProducts(query)
-		if err != nil {
-			response.Error(w, http.StatusInternalServerError, "internal error")
-			return
-		}
+		p, _ := h.rp.SearchProducts(query)
 
 		// response
 		// - serialize products
